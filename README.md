@@ -14,7 +14,7 @@
 
 ---
 
-> 🔬 **Research Goal:** This repository aggregates coursework and technical projects developed during my Master's studies. All exercises, pipelines, and algorithms are specifically contextualized around **Exposomics, Environmental Epidemiology, and Medicine Research**.
+> This repository aggregates coursework and technical projects developed during my Master's studies. All exercises, pipelines, and algorithms are specifically contextualized around **Exposomics, Environmental Epidemiology, and Medicine Research**.
 
 ---
 
