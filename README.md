@@ -23,8 +23,8 @@
 | Module | Title | Primary Tech | Core Focus & Applications |
 | :---: | :--- | :---: | :--- |
 | **01** | [`Computational Thinking`](./01_Computational_Thinking/) | `Python` | Algorithmic logic, problem decomposition, data structures, and bio-inspired scripting. |
-| **02** | [`Python-Foundations`](./02_Software_for_Data_Analysis/) | `Python` | Asabeneh's 30 Days of Python challenge. |
-| **03** | [`Software for Data Analysis`](./02_software_for_data_analysis/) | `R` / `Python` | Analytical environments, reproducible workflows, data wrangling, and statistical packages. |
+| **02** | [`Python-Foundations`](./02_Python-Foundations) | `Python` | Asabeneh's 30 Days of Python challenge. |
+| **03** | [`Software for Data Analysis`](./3_Software_for_Data_Analysis/) | `R` / `Python` | Analytical environments, reproducible workflows, data wrangling, and statistical packages. |
 
 ---
 
