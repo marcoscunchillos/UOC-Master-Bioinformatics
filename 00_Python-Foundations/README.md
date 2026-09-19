@@ -8,7 +8,7 @@
 </div>
 
 ## 🎯 Overview
-This directory tracks my daily progression through the **Asabeneh Yetayeh's 30 Days of Python challenge** challenge. 
+This directory tracks my daily progress through the 30 Days of Python challenge by Asabeneh Yetayeh, which I took before starting my Master's.
 
 ---
 
