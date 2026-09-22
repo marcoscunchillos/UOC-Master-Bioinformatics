@@ -1,39 +1,36 @@
 # 🧩 Module 01: Computational Thinking for Programming
 
+<div align="left">
+
 [![Status](https://img.shields.io/badge/Status-In_Progress-blue?style=flat-square)](#)
-[![Language](https://img.shields.io/badge/Language-Python_3-3776AB?style=flat-square&logo=python&logoColor=white)](#)
+[![Environment](https://img.shields.io/badge/Environment-Processing-006699?style=flat-square&logo=processing&logoColor=white)](#)
+[![Paradigms](https://img.shields.io/badge/Paradigm-Structured_Programming-green?style=flat-square)](#)
+
+</div>
 
 ## 🎯 Overview
-This module establishes the core principles of **computational thinking**—problem decomposition, pattern recognition, abstraction, and algorithm design. Exercises are mapped directly to biological contexts, such as parsing genetic sequences, calculating environmental toxicity thresholds, and modeling cell growth curves.
+This module introduces the core foundations of **computational thinking** and structured programming. It focuses on translating complex real-world problems into algorithmic logic—breaking down tasks through decomposition, abstraction, pattern recognition, and step-by-step execution.
+
+Hands-on implementations are built using **Processing**.
 
 ---
 
-## 🚀 Key Competencies
+## 🧪 Core Curriculum & Competencies
 
-> 1. **Decomposition:** Breaking complex biomedical problems into modular functions.
-> 2. **Pattern Recognition:** Identifying recurring structures in DNA/RNA strings and chemical concentration matrices.
-> 3. **Abstraction:** Translating real-world toxicological parameters into clean Python variables and data types.
-> 4. **Algorithmic Logic:** Designing control flows for patient cohort filtering and risk assessment.
-
----
-
-## 📊 Practical Assignments (PECs)
-
-| Assignment | Topic | Key Implementation |
-| :--- | :--- | :--- |
-| **PEC 1** | *Logic & Flow Control* | Conditionals and loops applied to toxicity threshold evaluation. |
-| **PEC 2** | *Data Structures & Functions* | Lists, dictionaries, and functions for handling patient biomarker records. |
-| **PEC 3** | *Final Algorithmic Project* | End-to-end Python script processing environmental exposure metrics. |
+> 1. **Computational Reasoning:** Identifying computer-solvable problems and designing logical sequence steps.
+> 2. **Computer Architecture & Language Evolution:** Understanding hardware execution flow, memory structures, and the evolution of modern software languages.
+> 3. **Structured Programming:** Mastering control flow, variables, functions, and iterative loops using Processing.
+> 4. **Biomedical Problem Decomposition:** Applying algorithmic logic to simulate spatial grids, cellular patterns, and environmental exposure boundaries.
 
 ---
 
-## 💻 Code Sample: Exposure Threshold Filter
+## 📚 Module Units & Topics
 
-```python
-# Abstraction: Classifying exposure risk based on threshold values
-def evaluate_exposure(concentration_ppm, threshold=0.05):
-    if concentration_ppm >= threshold:
-        return "HIGH_RISK: Exceeds safe limit"
-    return "SAFE: Below threshold"
+| Unit | Topic | Description |
+| :---: | :--- | :--- |
+| **01** | *Fundamentals of Computing* | Basic architecture, how computers execute code, and programming language history. |
+| **02** | *Computational Thinking* | Abstraction, problem decomposition, algorithm design, and flowcharts. |
+| **03** | *Structured Programming* | Syntax, data types, control structures (conditionals/loops) in Processing. |
+| **04** | *Guided Algorithmic Implementation* | Developing a complete visual and logical program from scratch. |
 
-print(evaluate_exposure(0.082))  # HIGH_RISK: Exceeds safe limit
+---

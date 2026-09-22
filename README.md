@@ -14,7 +14,7 @@
 
 ---
 
-> 🔬 **Research Goal:** This repository aggregates coursework and technical projects developed during my Master's studies. All exercises, pipelines, and algorithms are specifically contextualized around **Exposomics, Environmental Epidemiology, and Medicine Research**.
+> This repository aggregates coursework and technical projects developed during my Master's studies. All exercises, pipelines, and algorithms are specifically contextualized around **Exposomics, Environmental Epidemiology, and Medicine Research**.
 
 ---
 
@@ -23,8 +23,8 @@
 | Module | Title | Primary Tech | Core Focus & Applications |
 | :---: | :--- | :---: | :--- |
 | **00** | [`Python-Foundations`](./00_Python-Foundations) | `Python` | Asabeneh's 30 Days of Python challenge (completed before starting my Master's degree). |
-| **01** | [`Computational Thinking`](./01_Computational_Thinking/) | `Python` | Algorithmic logic, problem decomposition, data structures, and bio-inspired scripting. |
-| **02** | [`Software for Data Analysis`](./02_Software_for_Data_Analysis/) | `R` / `Python` | Analytical environments, reproducible workflows, data wrangling, and statistical packages. |
+| **01** | [`Computational Thinking`](./01_Computational_Thinking/) | `Processing` | Algorithmic logic, problem decomposition, data structures, and bio-inspired scripting. |
+| **02** | [`Software for Data Analysis`](./02_Software_for_Data_Analysis/) | `R` | Analytical environments, reproducible workflows, data wrangling, and statistical packages. |
 
 ---
 

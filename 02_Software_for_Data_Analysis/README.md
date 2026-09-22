@@ -1,49 +1,56 @@
----
-
-### 📊 3. `README.md` — Asignatura 2: Software para el Análisis de Datos
-
-Ubicación: `02_software_for_data_analysis/README.md`
-
-```markdown
 # 📈 Module 02: Software for Data Analysis
 
+<div align="left">
+
 [![Status](https://img.shields.io/badge/Status-In_Progress-blue?style=flat-square)](#)
-[![Tools](https://img.shields.io/badge/Tools-R_%7C_Python_%7C_RStudio-276DC3?style=flat-square&logo=r)](#)
+[![Language](https://img.shields.io/badge/Language-R_4.3+-276DC3?style=flat-square&logo=r&logoColor=white)](#)
+[![IDE](https://img.shields.io/badge/IDE-RStudio_%7C_RCommander-75AADB?style=flat-square&logo=rstudio&logoColor=white)](#)
+[![Ecosystem](https://img.shields.io/badge/Ecosystem-Bioconductor-2C2D5B?style=flat-square)](#)
+
+</div>
 
 ## 🎯 Overview
-This module covers the core ecosystem of data science software, focusing on environment configuration, reproducible workflows, and automated analytical pipelines. It bridges raw data collection with statistical modeling and publication-ready data visualization in environmental health research.
+This module provides an intermediate-level immersion into the **R statistical computing environment**, RStudio, and reproducible reporting via RMarkdown. Designed for health data science and bioinformatics, the course covers data wrangling, statistical modeling, probability simulations, machine learning fundamentals, and biological package ecosystems like **Bioconductor**.
 
 ---
 
-## 🛠️ Tooling & Stack
+## 🛠️ Key Technical Skills
 
-<p>
-  <img src="https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=RStudio&logoColor=white" alt="RStudio"/>
-  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"/>
-  <img src="https://img.shields.io/badge/tidyverse-1A237E?style=for-the-badge&logo=R&logoColor=white" alt="Tidyverse"/>
-  <img src="https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=Jupyter&logoColor=white" alt="Jupyter"/>
-</p>
-
----
-
-## 🧪 Focus Areas
-
-- **Data Wrangling:** Cleaning, reshaping, and merging large multi-variable environmental and clinical datasets.
-- **Reproducible Science:** Generating dynamic reports using RMarkdown/Quarto and Jupyter Notebooks.
-- **Exploratory Data Analysis (EDA):** Statistical summary and visualization of pollutant concentrations and cancer incidence rates.
+* **Reproducible Research:** Building dynamic analytical reports using `RMarkdown` and `RStudio`.
+* **Data Wrangling & Visualization:** Manipulating multi-variable datasets and crafting publication-ready plots with `ggplot2`.
+* **Statistical Modeling:** Executing linear regressions, ANOVA, and probability sampling in life-science contexts.
+* **Bioinformatics Ecosystem:** Leveraging `Bioconductor` and specialized biosanitary R libraries.
+* **Machine Learning Introduction:** Implementing supervised, unsupervised, and deep learning workflows in R.
 
 ---
 
-## 📊 Practical Assignments (PECs)
+## 📚 Course Modules & Syllabus
 
-| Assignment | Environment | Objectives |
-| :--- | :---: | :--- |
-| **PEC 1** | `R / RStudio` | Dataset loading, cleaning missing clinical values, and basic summary statistics. |
-| **PEC 2** | `R / Python` | Exploratory data analysis and visualization of dose-response relationships. |
+| Unit | Topic | Core Contents |
+| :---: | :--- | :--- |
+| **01** | *Environment & Tooling* | R, RStudio, RCommander, RMarkdown, data import/export, basic data structures. |
+| **02** | *Descriptive Statistics & Graphics* | Recoding variables, frequency tables, `ggplot2` graphics, Linear Regression, and ANOVA. |
+| **03** | *Programming & Databases* | Logic operations, custom functions, data structure manipulation, database connections. |
+| **04** | *Probability & Simulation* | Probability distributions (univariate/multivariate), sampling routines, simulation models. |
+| **05** | *Introduction to Machine Learning* | Supervised/unsupervised algorithms, clustering, and deep learning basics in R. |
+| **06** | *Bioinformatics Packages* | Shiny web applications, **Bioconductor** ecosystem, and health data tools. |
 
 ---
+
+## 📋 Continuous Assessment Assignments (PECs)
+
+| Assignment | Directory | Core Focus & Topics | Status |
+| :---: | :--- | :--- | :---: |
+| **PEC 1** | [`pec_1_r_environment/`](./pec_1_r_environment/) | RStudio setup, data import/export, data structures, and RMarkdown reporting. | 🟡 In Progress |
+| **PEC 2** | [`pec_2_descriptive_stats/`](./pec_2_descriptive_stats/) | Data wrangling, descriptive statistics, linear regression, ANOVA, and `ggplot2`. | ⚪ Pending |
+| **PEC 3** | [`pec_3_programming_simulation/`](./pec_3_programming_simulation/) | Custom R functions, database access, probability distributions, and sampling algorithms. | ⚪ Pending |
+| **PEC 4** | [`pec_4_machine_learning_omics/`](./pec_4_machine_learning_omics/) | Supervised/unsupervised ML, clustering, and **Bioconductor** package applications. | ⚪ Pending |
+
+---
+
+## 🚀 Execution & Reproducibility
+
+To run the analyses locally, clone the repository and open the corresponding `.Rmd` or `.R` script inside RStudio:
 
 ```bash
-# Workflow: Clone and inspect analysis scripts
-git clone [https://github.com/your-username/health-data-science-coursework.git](https://github.com/your-username/health-data-science-coursework.git)
 cd 02_software_for_data_analysis/pec_1_r_environment
