@@ -24,7 +24,7 @@
 | :---: | :--- | :---: | :--- |
 | **00** | [`Python-Foundations`](./00_Python-Foundations) | `Python` | Asabeneh's 30 Days of Python challenge (completed before starting my Master's degree). |
 | **01** | [`Computational Thinking`](./01_Computational_Thinking/) | `Python` | Algorithmic logic, problem decomposition, data structures, and bio-inspired scripting. |
-| **02** | [`Software for Data Analysis`](./02_Software_for_Data_Analysis/) | `R` / `Python` | Analytical environments, reproducible workflows, data wrangling, and statistical packages. |
+| **02** | [`Software for Data Analysis`](./02_Software_for_Data_Analysis/) | `R` | Analytical environments, reproducible workflows, data wrangling, and statistical packages. |
 
 ---
 
