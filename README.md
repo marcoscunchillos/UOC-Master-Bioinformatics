@@ -31,6 +31,8 @@
 ## 🛠️ Integrated Tech Stack
 
 ```text
-├── Programming       : Python 3.11+, R 4.3+
-├── Version Control   : Git, GitHub Desktop
-└── Environment       : VS Code, Linux/WSL, Jupyter
+├── Programming Languages : Python 3.11+, R 4.3+, Processing
+├── Development & IDEs    : VS Code, RStudio, Processing IDE, Linux/WSL
+├── Data Science & Stats  : RMarkdown, ggplot2, Linear Regression & ANOVA, Probability Simulation
+├── Bio & ML Ecosystems   : Bioconductor, Machine Learning (Supervised/Unsupervised), Shiny
+└── Version Control & Ops : Git, GitHub, Bash/Shell
