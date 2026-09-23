@@ -23,8 +23,10 @@
 | Module | Title | Primary Tech | Core Focus & Applications |
 | :---: | :--- | :---: | :--- |
 | **00** | [`Python-Foundations`](./00_Python-Foundations) | `Python` | Asabeneh's 30 Days of Python challenge (completed before starting my Master's degree). |
-| **01** | [`Computational Thinking`](./01_Computational_Thinking/) | `Processing` | Algorithmic logic, problem decomposition, data structures, and bio-inspired scripting. |
-| **02** | [`Software for Data Analysis`](./02_Software_for_Data_Analysis/) | `R` | Analytical environments, reproducible workflows, data wrangling, and statistical packages. |
+| **01** | [`Linear Algebra`](./01_Linear_Algebra/) | `R` | Linear systems, vector spaces, eigenvalues/vectors, SVD (dimensionality reduction), and Markov chains. |
+| **02** | [`Computational Thinking`](./02_Computational_Thinking/) | `Processing` | Algorithmic logic, problem decomposition, data structures, and bio-inspired scripting. |
+| **03** | [`Software for Data Analysis`](./03_Software_for_Data_Analysis/) | `R` | Analytical environments, reproducible workflows, data wrangling, and statistical packages. |
+
 
 ---
 

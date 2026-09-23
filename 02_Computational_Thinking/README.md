@@ -1,4 +1,4 @@
-# 🧩 Module 01: Computational Thinking for Programming
+# 🧩 Module 02: Computational Thinking for Programming
 
 <div align="left">
 
