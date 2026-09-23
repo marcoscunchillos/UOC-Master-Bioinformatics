@@ -37,14 +37,14 @@ This module provides an intermediate-level immersion into the **R statistical co
 
 ---
 
-## 📋 Continuous Assessment Assignments (PECs)
+## 📋 Continuous Assessment Assignments
 
 | Assignment | Directory | Core Focus & Topics | Status |
 | :---: | :--- | :--- | :---: |
-| **PEC 1** | [`pec_1_r_environment/`](./pec_1_r_environment/) | RStudio setup, data import/export, data structures, and RMarkdown reporting. | 🟡 In Progress |
-| **PEC 2** | [`pec_2_descriptive_stats/`](./pec_2_descriptive_stats/) | Data wrangling, descriptive statistics, linear regression, ANOVA, and `ggplot2`. | ⚪ Pending |
-| **PEC 3** | [`pec_3_programming_simulation/`](./pec_3_programming_simulation/) | Custom R functions, database access, probability distributions, and sampling algorithms. | ⚪ Pending |
-| **PEC 4** | [`pec_4_machine_learning_omics/`](./pec_4_machine_learning_omics/) | Supervised/unsupervised ML, clustering, and **Bioconductor** package applications. | ⚪ Pending |
+| **Lab 1** | [`lab_01_r_environment/`](./lab_01_r_environment/) | RStudio setup, data import/export, data structures, and RMarkdown reporting. | 🟡 In Progress |
+| **Lab 2** | [`lab_02_descriptive_stats/`](./lab_02_descriptive_stats/) | Data wrangling, descriptive statistics, linear regression, ANOVA, and `ggplot2`. | ⚪ Pending |
+| **Lab 3** | [`lab_03_programming_simulation/`](./lab_03_programming_simulation/) | Custom R functions, database access, probability distributions, and sampling algorithms. | ⚪ Pending |
+| **Lab 4** | [`lab_04_machine_learning_omics/`](./lab_04_machine_learning_omics/) | Supervised/unsupervised ML, clustering, and **Bioconductor** package applications. | ⚪ Pending |
 
 ---
 

@@ -25,15 +25,15 @@ This module provides an introduction to **Linear Algebra for Data Science**, cov
 
 ---
 
-## 📋 Continuous Assessment Assignments (PECs)
+## 📋 Continuous Assessment Assignments
 
 | Assignment | Directory | Core Focus & Topics | Status |
 | :---: | :--- | :--- | :---: |
-| **PEC 1** | [`pec_1_linear_systems/`](./pec_1_linear_systems/) | Linear systems, matrix algebra, and introductory problem solving with `CalcMe` and `R`. | 🟡 In Progress |
-| **PEC 2** | [`pec_2_vector_spaces/`](./pec_2_vector_spaces/) | Vector spaces, basis transformations, and subspace operations for data science. | ⚪ Pending |
-| **PEC 3** | [`pec_3_eigenvalues_eigenvectors/`](./pec_3_eigenvalues_eigenvectors/) | Eigenvalues, eigenvectors, spectral properties, and matrix factorization models. | ⚪ Pending |
-| **PEC 4** | [`practica_1_svd_dimensionality/`](./practica_1_svd_dimensionality/) | Singular Value Decomposition (SVD) and dimensionality reduction techniques. | ⚪ Pending |
-| **PEC 5** | [`practica_2_markov_pagerank/`](./practica_2_markov_pagerank/) | Markov chains, transition matrices, and PageRank algorithm implementations in `R`. | ⚪ Pending |
+| **Assignment 1** | [`assignment1_linear_systems/`](./assignment1_linear_systems/) | Linear systems, matrix algebra, and introductory problem solving with `CalcMe` and `R`. | 🟡 In Progress |
+| **Assignment 2** | [`assignment2_vector_spaces/`](./assignment2_vector_spaces/) | Vector spaces, basis transformations, and subspace operations for data science. | ⚪ Pending |
+| **Assignment 3** | [`assignment3_eigenvalues_eigenvectors/`](./assignment3_eigenvalues_eigenvectors/) | Eigenvalues, eigenvectors, spectral properties, and matrix factorization models. | ⚪ Pending |
+| **Assignment 4** | [`assignment4_svd_dimensionality/`](./assignment4_svd_dimensionality/) | Singular Value Decomposition (SVD) and dimensionality reduction techniques. | ⚪ Pending |
+| **Assignment 5** | [`assignment5_markov_pagerank/`](./assignment5_markov_pagerank/) | Markov chains, transition matrices, and PageRank algorithm implementations in `R`. | ⚪ Pending |
 
 ---
 
