@@ -4,9 +4,10 @@
 
 ### *Practical coursework, analytical pipelines, and computational modeling*
 
-[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Python-3.13+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![R](https://img.shields.io/badge/R-4.3+-276DC3?style=for-the-badge&logo=r&logoColor=white)](https://www.r-project.org/)
-[![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)](https://www.gnu.org/software/bash/)
+[![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org/)
+[![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)](https://learn.microsoft.com/powershell/)
 [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
@@ -33,8 +34,7 @@
 ## 🛠️ Integrated Tech Stack
 
 ```text
-├── Programming Languages : Python 3.11+, R 4.3+, Processing
-├── Development & IDEs    : VS Code, RStudio, Processing IDE, Linux/WSL
-├── Data Science & Stats  : RMarkdown, ggplot2, Linear Regression & ANOVA, Probability Simulation
-├── Bio & ML Ecosystems   : Bioconductor, Machine Learning (Supervised/Unsupervised), Shiny
-└── Version Control & Ops : Git, GitHub, Bash/Shell
+├── Languages & Core      : Python 3.13+, R 4.3+, Processing
+├── Notebooks & Editors   : Jupyter Notebooks (.ipynb), VS Code, RStudio, Processing IDE
+├── Environments & Ops    : Miniconda (Conda Environments), PowerShell, Git, GitHub
+└── Data Science & Stats  : Data Lifecycle Labs, Linear Algebra (SVD/Eigenvalues), RMarkdown, ggplot2
