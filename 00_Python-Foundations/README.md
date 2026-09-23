@@ -19,6 +19,6 @@ This directory tracks my daily progress through the 30 Days of Python challenge 
 | **01** | *Introduction & Basics* | [`Introduction.py`](./01_Introduction.py) |
 | **02** | *Variables & Built-in Functions* | [`02_variables.py`](./02_variables.py) |
 | **03** | *Operators & Boolean Logic* | [`03_operators.py`](./03_operators.py) |
-| **04** | *Strings & Text Parsing* | `--` |
+| **04** | *Strings & Text Parsing* | [`04_string.py`](./04_strings.py) |
 | **05** | *Lists & Data Collections* | `--` |
 
