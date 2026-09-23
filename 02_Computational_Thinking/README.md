@@ -37,24 +37,23 @@ This module introduces the core foundations of **computational thinking** and st
 
 ## 📋 Continuous Assessment Assignments
 
-### 📖 Theoretical & Conceptual Coursework (PECs)
+###  Theoretical & Conceptual Coursework
 
 | Assignment | Directory | Core Focus & Topics | Status |
 | :---: | :--- | :--- | :---: |
-| **PEC 1** | [`pec_01_ai_ethics/`](./pec_01_ai_ethics/) | **Debate:** Ethics, developer responsibility, and error liability in AI-generated code. | 🟡 In Progress |
-| **PEC 2** | [`pec_02_computational_thinking_intro/`](./pec_02_computational_thinking_intro/) | Foundations of computational thinking, logical problem solving, and knowledge assessment. | ⚪ Pending |
-| **PEC 3** | [`pec_03_computational_thinking_app/`](./pec_03_computational_thinking_app/) | Applied computational reasoning, system abstraction, and flowchart modeling. | ⚪ Pending |
-| **PEC 4** | [`pec_04_algorithmics/`](./pec_04_algorithmics/) | Algorithm design, step-by-step execution logic, and pseudocode formulation. | ⚪ Pending |
+| **Assignment 1** | [`assignment_01_ai_ethics/`](./assignment_01_ai_ethics/) | **Debate:** Ethics, developer responsibility, and error liability in AI-generated code. | 🟡 In Progress |
+| **Assignment 2** | [`assignment_02_computational_thinking_intro/`](./assignment_02_computational_thinking_intro/) | Foundations of computational thinking, logical problem solving, and knowledge assessment. | ⚪ Pending |
+| **Assignment 3** | [`assignment_03_computational_thinking_app/`](./assignment_03_computational_thinking_app/) | Applied computational reasoning, system abstraction, and flowchart modeling. | ⚪ Pending |
+| **Assignment 4** | [`assignment_04_algorithmics/`](./assignment_04_algorithmics/) | Algorithm design, step-by-step execution logic, and pseudocode formulation. | ⚪ Pending |
 
-### 💻 Practical Programming Projects in Processing (PRs)
+### Practical Programming Labs in Processing
 
 | Assignment | Directory | Core Focus & Topics | Status |
 | :---: | :--- | :--- | :---: |
-| **PR 0** | [`pr_00_processing_intro/`](./pr_00_processing_intro/) | Processing IDE setup, canvas configuration, basic shapes, and graphical rendering. | ⚪ Pending |
-| **PR 1** | [`pr_01_variables_control_flow/`](./pr_01_variables_control_flow/) | Processing scripting, variables, data types, logical operators, and control flow (if/loops). | ⚪ Pending |
-| **PR 2** | [`pr_02_arrays_functions/`](./pr_02_arrays_functions/) | Modular programming using custom functions, parameter handling, and data arrays. | ⚪ Pending |
-| **PR 3** | [`pr_03_final_project/`](./pr_03_final_project/) | **Capstone Project:** Developing a fully functional visual and computational software application. | ⚪ Pending |
-
+| **Lab 0** | [`lab_00_processing_intro/`](./lab_00_processing_intro/) | Processing IDE setup, canvas configuration, basic shapes, and graphical rendering. | ⚪ Pending |
+| **Lab 1** | [`lab_01_variables_control_flow/`](./lab_01_variables_control_flow/) | Processing scripting, variables, data types, logical operators, and control flow (if/loops). | ⚪ Pending |
+| **Lab 2** | [`lab_02_arrays_functions/`](./lab_02_arrays_functions/) | Modular programming using custom functions, parameter handling, and data arrays. | ⚪ Pending |
+| **Lab 3** | [`lab_03_final_project/`](./lab_03_final_project/) | **Capstone Project:** Developing a fully functional visual and computational software application. | ⚪ Pending |
 ---
 
 ## 🚀 Execution & Reproducibility
