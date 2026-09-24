@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🧬 Master's degree in Bioinformatics & Data Science
+#  Master's degree in Bioinformatics & Data Science
 
 ### *Practical coursework, analytical pipelines, and computational modeling*
 
@@ -19,7 +19,7 @@
 
 ---
 
-## 🗺️ Academic Modules
+##  Academic Modules
 
 | Module | Title | Primary Tech | Core Focus & Applications |
 | :---: | :--- | :---: | :--- |
@@ -31,7 +31,7 @@
 
 ---
 
-## 🛠️ Integrated Tech Stack
+##  Integrated Tech Stack
 
 ```text
 ├── Languages & Core      : Python 3.13+, R 4.3+, Processing
