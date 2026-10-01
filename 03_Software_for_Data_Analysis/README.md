@@ -41,10 +41,10 @@ This module provides an intermediate-level immersion into the **R statistical co
 
 | Assignment | Directory | Core Focus & Topics | Status |
 | :---: | :--- | :--- | :---: |
-| **Lab 1** | [`lab_01_r_environment/`](./lab_01_r_environment/) | RStudio setup, data import/export, data structures, and RMarkdown reporting. | 🟡 In Progress |
-| **Lab 2** | [`lab_02_descriptive_stats/`](./lab_02_descriptive_stats/) | Data wrangling, descriptive statistics, linear regression, ANOVA, and `ggplot2`. | ⚪ Pending |
-| **Lab 3** | [`lab_03_programming_simulation/`](./lab_03_programming_simulation/) | Custom R functions, database access, probability distributions, and sampling algorithms. | ⚪ Pending |
-| **Lab 4** | [`lab_04_machine_learning_omics/`](./lab_04_machine_learning_omics/) | Supervised/unsupervised ML, clustering, and **Bioconductor** package applications. | ⚪ Pending |
+| **Lab 01** | [`lab_01_r_environment/`](./lab_01_r_environment/) | R & RStudio setup, RMarkdown, data structures, wrangling, ggplot2, linear regression, and ANOVA. | 🟡 In Progress |
+| **Lab 2** | [`lab_02_programming_probability/`](./lab_02_programming_probability/) | R syntax & logic, custom functions, database access, probability distributions, and sampling simulations. | ⚪ Pending |
+| **Lab 3** | [`lab_03_machine_learning_omics/`](./lab_03_machine_learning_omics/) | Machine learning, deep learning, ANOVA, Shiny apps, and Bioconductor biosanitary packages. | ⚪ Pending |
+| **Lab 4** | [`lab_04_final_project/`](./lab_04_final_project/) | End-to-end integrative bioinformatics & health data science capstone project. | ⚪ Pending |
 
 ---
 
