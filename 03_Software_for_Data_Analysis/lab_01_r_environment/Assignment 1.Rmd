@@ -1,0 +1,69 @@
+---
+title: "Assignment 1.1"
+author: "Marcos Cunchillos Just"
+output: html_document
+---
+
+##Exercice 1 
+A partir del conjunto de datos anorexia del paquete **MASS**, que corresponden a los datos de cambio de peso de pacientes jóvenes con anorexia, mostrad los tipos de datos que contiene y comprobad si existen valores NA y NULL. 
+```{r}
+library(MASS)
+sapply(anorexia, class)
+any(is.na(anorexia))
+sapply(anorexia, is.null)
+```
+Para la variable Treat, transformad los valores «CBT», «Cont» y «FT» en «Cogn Beh Tr», «Contr» y «Fam Tr», respectivamente.
+```{r}
+levels(anorexia_clean$Treat) <- c("Cogn Beh Tr", "Contr", "Fam Tr")
+```
+
+##Exercice 2
+a) Exportad los	datos	biopsy del	paquete	MASS a	un	archivo	«.csv.»
+```{r}
+library(MASS)
+write.csv(biopsy,file = "C:/Users/marco/OneDrive/Documentos/GitHub/UOC-Master-Bioinformatics/03_Software_for_Data_Analysis/lab_01_r_environment.csv")
+```
+b) Generad un	resumen	(summary)	de	la	variable	age de	melanoma	y	guardad la	salida	
+que	os aparece	en	un	documento	.doc
+```{r}
+age_summary <- summary(Melanoma$age)
+writeLines(
+  capture.output(print(age_summary)),
+  con = "summary_age.doc")
+```
+c) Buscad	 un	 data frame	 en	 algún	 repositorio	 de	 datos	 de	 Biomedicina,	 descargad un	conjunto	 de	 datos	 en	 «.csv» e	 importad este	 fichero	 a	 un	 documento	R	 Markdown usando	el	código	o	el	menú	de	importación	de	RStudio.
+```{r}
+library(readr)
+url <- "https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data"
+datos <- read_csv(url, col_names = FALSE)
+```
+
+#Exercice 3
+En	el	siguiente	ejemplo	veremos	cómo	utilizar	diferentes	operadores	sobre	el	conjunto	de	datos	 **birthwt**,	 así	 como	 también	 algunas	 funciones	 que	 nos	 permiten	 obtener más	información	de	las	variables:
+a) ¿Cuál	es	la	edad	máxima	de	las	madres	del	conjunto	de	datos?
+```{r}
+max(birthwt$age)
+```
+b) ¿Cuál	es	la	edad	mínima	de	las	madres	del	conjunto	de	datos?
+```{r}
+min(birthwt$age)
+```
+c) ¿Cuál	es	el	rango	de	edad	de	las	madres?
+```{r}
+rank<-max(birthwt$age)-min(birthwt$age)
+rank
+```
+d) ¿Fumaba	la	madre	cuyo	recién	nacido	era	el	de	menor	peso?
+```{r}
+birthwt$smoke[birthwt$bwt==min(birthwt$bwt)]
+```
+e) ¿Cuánto	pesó	el	recién	nacido	cuya	madre	tenía	la	edad	máxima?
+```{r}
+birthwt$bwt[birthwt$age==max(birthwt$age)]
+```
+f) Listad los	pesos	de	los	recién	nacidos,	cuyas	madres	visitarán	menos	de	dos veces	al	
+médico	durante	el	primer	trimestre.
+```{r}
+subset(birthwt,ftv<2,select = bwt)
+```
+
