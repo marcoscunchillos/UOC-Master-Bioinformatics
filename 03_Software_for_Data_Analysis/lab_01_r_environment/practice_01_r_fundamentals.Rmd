@@ -1,112 +1,291 @@
 ---
 title: "Assignment 1.1"
 author: "Marcos Cunchillos Just"
-output: html_document
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    df_print: paged
+  pdf_document:
+    toc: true
 ---
 
-##Exercice 1 
-A partir del conjunto de datos anorexia del paquete **MASS**, que corresponden a los datos de cambio de peso de pacientes jóvenes con anorexia, mostrad los tipos de datos que contiene y comprobad si existen valores NA y NULL. 
-```{r}
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+
 library(MASS)
+library(dplyr)
+library(readr)
+```
+
+## Exercise 1
+
+Using the **anorexia** dataset from the **MASS** package, which contains weight-change data for young patients with anorexia, display the data types it contains and check whether there are any `NA` or `NULL` values.
+
+```{r ex1-data-types}
+# Data type of each column
 sapply(anorexia, class)
+
+# Any missing values in the whole data frame?
 any(is.na(anorexia))
+
+# Is any column NULL?
 sapply(anorexia, is.null)
 ```
-Para la variable Treat, transformad los valores «CBT», «Cont» y «FT» en «Cogn Beh Tr», «Contr» y «Fam Tr», respectivamente.
-```{r}
+
+For the variable `Treat`, recode the values "CBT", "Cont" and "FT" as "Cogn Beh Tr", "Contr" and "Fam Tr", respectively.
+
+```{r ex1-recode-treat}
+# Work on a copy so the original dataset stays untouched
+anorexia_clean <- anorexia
+
+# Assign new labels by position
 levels(anorexia_clean$Treat) <- c("Cogn Beh Tr", "Contr", "Fam Tr")
 ```
 
-##Exercice 2
-a) Exportad los	datos	biopsy del	paquete	MASS a	un	archivo	«.csv.»
-```{r}
-library(MASS)
-write.csv(biopsy,file = "C:/Users/marco/OneDrive/Documentos/GitHub/UOC-Master-Bioinformatics/03_Software_for_Data_Analysis/lab_01_r_environment.csv")
+## Exercise 2
+
+**a)** Export the **biopsy** data from the **MASS** package to a `.csv` file.
+
+```{r ex2a-export-biopsy}
+# Create the output folder
+dir.create("data", showWarnings = FALSE)
+
+# Export the biopsy dataset to a CSV file
+write.csv(biopsy, file = file.path("data", "biopsy.csv"))
 ```
-b) Generad un	resumen	(summary)	de	la	variable	age de	melanoma	y	guardad la	salida	
-que	os aparece	en	un	documento	.doc
-```{r}
+
+**b)** Generate a summary of the variable `age` from the **Melanoma** dataset and save the output shown in the console to a `.doc` document.
+
+```{r ex2b-summary-age}
 age_summary <- summary(Melanoma$age)
+age_summary
+
+# Capture the console output and write it to a file that Word can open
 writeLines(
   capture.output(print(age_summary)),
-  con = "summary_age.doc")
+  con = "summary_age.doc"
+)
 ```
-c) Buscad	 un	 data frame	 en	 algún	 repositorio	 de	 datos	 de	 Biomedicina,	 descargad un	conjunto	 de	 datos	 en	 «.csv» e	 importad este	 fichero	 a	 un	 documento	R	 Markdown usando	el	código	o	el	menú	de	importación	de	RStudio.
-```{r}
-library(readr)
+
+**c)** Find a data frame in a biomedical data repository, download a dataset as a `.csv` file and import it into an R Markdown document using code or the RStudio import menu.
+
+```{r ex2c-import-csv}
+# Breast Cancer Wisconsin (Diagnostic) dataset, UCI Machine Learning Repository
 url <- "https://archive.ics.uci.edu/ml/machine-learning-databases/breast-cancer-wisconsin/wdbc.data"
 datos <- read_csv(url, col_names = FALSE)
 ```
 
-#Exercice 3
-En	el	siguiente	ejemplo	veremos	cómo	utilizar	diferentes	operadores	sobre	el	conjunto	de	datos	 **birthwt**,	 así	 como	 también	 algunas	 funciones	 que	 nos	 permiten	 obtener más	información	de	las	variables:
-a) ¿Cuál	es	la	edad	máxima	de	las	madres	del	conjunto	de	datos?
-```{r}
+## Exercise 3
+
+The following example shows how to use different operators on the **birthwt** dataset, as well as some functions that provide more information about its variables.
+
+**a)** What is the maximum age of the mothers in the dataset?
+
+```{r ex3a-max-age}
 max(birthwt$age)
 ```
-b) ¿Cuál	es	la	edad	mínima	de	las	madres	del	conjunto	de	datos?
-```{r}
+
+**b)** What is the minimum age of the mothers in the dataset?
+
+```{r ex3b-min-age}
 min(birthwt$age)
 ```
-c) ¿Cuál	es	el	rango	de	edad	de	las	madres?
-```{r}
-rank<-max(birthwt$age)-min(birthwt$age)
-rank
-```
-d) ¿Fumaba	la	madre	cuyo	recién	nacido	era	el	de	menor	peso?
-```{r}
-birthwt$smoke[birthwt$bwt==min(birthwt$bwt)]
-```
-e) ¿Cuánto	pesó	el	recién	nacido	cuya	madre	tenía	la	edad	máxima?
-```{r}
-birthwt$bwt[birthwt$age==max(birthwt$age)]
-```
-f) Listad los	pesos	de	los	recién	nacidos,	cuyas	madres	visitarán	menos	de	dos veces	al	
-médico	durante	el	primer	trimestre.
-```{r}
-subset(birthwt,ftv<2,select = bwt)
+
+**c)** What is the age range of the mothers?
+
+```{r ex3c-age-range}
+# Range = maximum - minimum
+age_range <- max(birthwt$age) - min(birthwt$age)
+age_range
 ```
 
-#Exercice 4
-A	partir	del	conjunto	de	datos	anorexia trabajado	en	apartados	anteriores,	cread	una	matriz que	 tenga	 como	 columnas	 los	 valores	 de	 Prewt	 y	 Postwt, y	 cada	 fila	 sean los valores correspondientes	para	cada	posición.
-```{r}
-library(MASS)
-anorexia_matrix<-matrix(c(anorexia$Prewt,anorexia$Postwt),ncol=2)
+**d)** Did the mother of the lowest-birth-weight newborn smoke?
+
+```{r ex3d-smoker-lowest-bwt}
+# Smoking status of the mother whose newborn had the minimum birth weight
+birthwt$smoke[birthwt$bwt == min(birthwt$bwt)]
 ```
 
-#Exercice 5
-Copia	el	código	siguiente	en	tu	consola	para	generar	un	data frame	con	veinticinco registros	y	seis variables, y	responde	a	los	siguientes	apartados:
-```{r}
-Identificador <-
-c("I1","I2","I3","I4","I5","I6","I7","I8","I9","I10","I11","I12","I13","I14",
-"I15","I16","I17","I18","I19","I20","I21","I22","I23","I24","I25")
-Edad <-
-c(23,24,21,22,23,25,26,24,21,22,23,25,26,24,22,21,25,26,24,21,25,27,26,22,29)
-Sexo <-c(1,2,1,1,1,2,2,2,1,2,1,2,2,2,1,1,1,2,2,2,1,2,1,1,2) #1 para mujeres y 2 para hombres
-Peso <-
-c(76.5,81.2,79.3,59.5,67.3,78.6,67.9,100.2,97.8,56.4,65.4,67.5,87.4,99.7,87.6
-,93.4,65.4,73.7,85.1,61.2,54.8,103.4,65.8,71.7,85.0)
-Alt <-
-c(165,154,178,165,164,175,182,165,178,165,158,183,184,164,189,167,182,179,165
-,158,183,184,189,166,175) #altura en cm
-Fuma <-
-c("SÍ","NO","SÍ","SÍ","NO","NO","NO","SÍ","SÍ","SÍ","NO","NO","SÍ","SÍ","SÍ",
-"SÍ","NO","NO","SÍ","SÍ","SÍ","NO","SÍ","NO","SÍ")ç
-Trat_Pulmon <- data.frame(Identificador,Edad,Sexo,Peso,Alt,Fuma)
+**e)** How much did the newborn whose mother had the maximum age weigh?
+
+```{r ex3e-bwt-oldest-mother}
+# Birth weight of the newborn(s) whose mother had the maximum age
+birthwt$bwt[birthwt$age == max(birthwt$age)]
+```
+
+**f)** List the birth weights of the newborns whose mothers made fewer than two physician visits during the first trimester.
+
+```{r ex3f-bwt-few-visits}
+subset(birthwt, ftv < 2, select = bwt)
+```
+
+## Exercise 4
+
+Using the **anorexia** dataset from the previous sections, create a matrix whose columns are the values of `Prewt` and `Postwt`, with each row holding the corresponding values for each observation.
+
+```{r ex4-anorexia-matrix}
+anorexia_matrix <- matrix(c(anorexia$Prewt, anorexia$Postwt), ncol = 2)
+```
+
+## Exercise 5
+
+Copy the following code into your console to generate a data frame with twenty-five records and six variables, and answer the questions below.
+
+```{r ex5-create-data}
+Identificador <- c(
+  "I1", "I2", "I3", "I4", "I5", "I6", "I7", "I8", "I9", "I10", "I11", "I12",
+  "I13", "I14", "I15", "I16", "I17", "I18", "I19", "I20", "I21", "I22", "I23",
+  "I24", "I25"
+)
+
+Edad <- c(
+  23, 24, 21, 22, 23, 25, 26, 24, 21, 22, 23, 25, 26,
+  24, 22, 21, 25, 26, 24, 21, 25, 27, 26, 22, 29
+)
+
+# Sex: 1 = female, 2 = male
+Sexo <- c(
+  1, 2, 1, 1, 1, 2, 2, 2, 1, 2, 1, 2, 2,
+  2, 1, 1, 1, 2, 2, 2, 1, 2, 1, 1, 2
+)
+
+Peso <- c(
+  76.5, 81.2, 79.3, 59.5, 67.3, 78.6, 67.9, 100.2, 97.8, 56.4, 65.4, 67.5,
+  87.4, 99.7, 87.6, 93.4, 65.4, 73.7, 85.1, 61.2, 54.8, 103.4, 65.8, 71.7,
+  85.0
+)
+
+# Height in cm
+Alt <- c(
+  165, 154, 178, 165, 164, 175, 182, 165, 178, 165, 158, 183, 184,
+  164, 189, 167, 182, 179, 165, 158, 183, 184, 189, 166, 175
+)
+
+# Smoker: "SÍ" = yes, "NO" = no
+Fuma <- c(
+  "SÍ", "NO", "SÍ", "SÍ", "NO", "NO", "NO", "SÍ", "SÍ", "SÍ", "NO", "NO", "SÍ",
+  "SÍ", "SÍ", "SÍ", "NO", "NO", "SÍ", "SÍ", "SÍ", "NO", "SÍ", "NO", "SÍ"
+)
+
+Trat_Pulmon <- data.frame(Identificador, Edad, Sexo, Peso, Alt, Fuma)
 Trat_Pulmon
 ```
 
-a) Seleccionad los	registros	con	edad	> 22.
-```{r}
-subset(Trat_Pulmon,Edad>22)
-```
-b) Seleccionad el	 elemento	 3	 de	 la	 columna	 4	 del	 conjunto	 de	 datos	 (contando	 el	identificador).
-```{r}
-Trat_Pulmon[3,4]
-```
-c) Usad el	comando	subset() para	seleccionar	todas	las	 filas	que	tienen	una	edad	menor	
-que	27	años	y	sin	incluir	la	columna	Alt.
-```{r}
-subset(Trat_Pulmon,Edad<27,select = -c(Alt))
+**a)** Select the records with age > 22.
+
+```{r ex5a-age-over-22}
+subset(Trat_Pulmon, Edad > 22)
 ```
 
+**b)** Select element 3 of column 4 of the dataset (counting the identifier column).
+
+```{r ex5b-element-3-col-4}
+Trat_Pulmon[3, 4]
+```
+
+**c)** Use `subset()` to select all rows with age under 27 years, excluding the `Alt` column.
+
+```{r ex5c-age-under-27}
+subset(Trat_Pulmon, Edad < 27, select = -c(Alt))
+```
+
+## Exercise 6
+
+Load the **ChickWeight** dataset, which contains information on the weight of 578 chicks in grams (`weight`), the time since the measurement at birth (`Time`), an identifier variable for each chick (`Chick`) based on weight range, and a factor variable with the experimental diet each chick received (`Diet`).
+
+**a)** Load the **ChickWeight** dataset from the **datasets** package into your working environment.
+
+```{r ex6a-load-chickweight}
+data(ChickWeight)
+```
+
+**b)** Create a scatter plot of the variable `weight`.
+
+```{r ex6b-scatter-weight}
+plot(
+  ChickWeight$weight,
+  xlab = "Observation index",
+  ylab = "Weight (g)",
+  main = "Scatter plot of chick weight"
+)
+```
+
+**c)** Create a boxplot of the variable `Time`.
+
+```{r ex6c-boxplot-time}
+boxplot(
+  ChickWeight$Time,
+  ylab = "Time since birth (days)",
+  main = "Boxplot of measurement time"
+)
+```
+
+## Exercise 7
+
+Using the **anorexia** dataset from the **MASS** package, create another data frame called `anorexia_treat_df` consisting of `Treat` and a new vector computed from the difference `Postwt - Prewt`. The result is a data frame containing the treatment type and the weight gained or lost after the treatment.
+
+```{r ex7-treat-df}
+# Weight change after treatment (Postwt - Prewt)
+after_treatment <- anorexia$Postwt - anorexia$Prewt
+
+anorexia_treat_df <- data.frame(anorexia$Treat, after_treatment)
+```
+
+Select the individuals who gained weight after treatment and create a new dataset called `anorexia_treat_C_df` containing only those who followed the "Cont" treatment and gained weight.
+
+```{r ex7-control-gainers}
+anorexia_treat_C_df <- anorexia_treat_df |>
+  filter(anorexia.Treat == "Cont", after_treatment > 0)
+```
+
+## Exercise 8
+
+Solve the following sections.
+
+**a)** Create a fictitious dataset in R. It must contain thirty observations (fifteen men and fifteen women) for six variables (ID, Age, Gender, Treatment, Weight, Height).
+
+```{r ex8a-create-data}
+# Fix the seed so the simulated data are identical on every knit
+set.seed(123)
+
+Id <- 1:30
+Age <- round(rnorm(30, mean = 65, sd = 8))
+Gender <- c(rep(1, 15), rep(2, 15))
+Treat <- c(rep("A", 10), rep("B", 10), rep("C", 10))
+Wt <- round(rnorm(30, mean = 65, sd = 7))
+Ht <- round(rnorm(30, mean = 175, sd = 10))
+
+Health_Data <- data.frame(Id, Age, Gender, Treat, Wt, Ht)
+```
+
+**b)** Explore your dataset and its variables.
+
+```{r ex8b-summary}
+summary(Health_Data)
+```
+
+**c)** Create a new variable from one of the existing ones. For example, compute the BMI (`BMI = weight (kg) / height (m)^2`) and add it to the dataset.
+
+```{r ex8c-bmi}
+# Height is stored in cm, so divide by 100 to get metres
+BMI <- Health_Data$Wt / (Health_Data$Ht / 100)**2
+Health_Data_2 <- cbind(Health_Data, BMI)
+```
+
+**d)** Create two separate data frames for men and women with two different names: `Df_Men` and `Df_Women`.
+
+```{r ex8d-split-by-gender}
+Df_Men <- Health_Data |>
+  filter(Gender == 1)
+
+Df_Women <- Health_Data |>
+  filter(Gender == 2)
+```
+
+**e)** Recombine the two previous data frames and recreate the first one using `rbind()`.
+
+```{r ex8e-rbind}
+Health_Data_3 <- rbind(Df_Men, Df_Women)
+```
