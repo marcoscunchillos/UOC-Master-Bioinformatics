@@ -1,4 +1,4 @@
-# 📈 Module 03: Software for Data Analysis
+# Module 03: Software for Data Analysis
 
 <div align="left">
 
@@ -53,4 +53,4 @@ This module provides an intermediate-level immersion into the **R statistical co
 To run the analyses locally, clone the repository and open the corresponding `.Rmd` or `.R` script inside RStudio:
 
 ```bash
-cd 02_software_for_data_analysis/pec_1_r_environment
+cd 03_software_for_data_analysis/lab_01_r_environment
