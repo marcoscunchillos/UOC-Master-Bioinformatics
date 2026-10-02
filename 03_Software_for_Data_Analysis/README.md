@@ -39,6 +39,8 @@ This module provides an intermediate-level immersion into the **R statistical co
 
 ## 📋 Continuous Assessment Assignments
 
+Each lab folder contains its own `README.md` with the list of deliverables, rendered reports, and setup instructions.
+
 | Assignment | Directory | Core Focus & Topics | Status |
 | :---: | :--- | :--- | :---: |
 | **Lab 01** | [`lab_01_r_environment/`](./lab_01_r_environment/) | R & RStudio setup, RMarkdown, data structures, wrangling, ggplot2, linear regression, and ANOVA. | 🟡 In Progress |
@@ -53,4 +55,8 @@ This module provides an intermediate-level immersion into the **R statistical co
 To run the analyses locally, clone the repository and open the corresponding `.Rmd` or `.R` script inside RStudio:
 
 ```bash
-cd 03_software_for_data_analysis/lab_01_r_environment
+git clone https://github.com/marcoscunchillos/UOC-Master-Bioinformatics.git
+cd UOC-Master-Bioinformatics/03_Software_for_Data_Analysis
+```
+
+Required packages and lab-specific instructions are listed in the `README.md` of each lab folder.

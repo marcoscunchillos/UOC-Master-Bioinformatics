@@ -1,4 +1,4 @@
-# 🧮 Module 01: Linear Algebra for Data Science
+# Module 01: Linear Algebra for Data Science
 
 <div align="left">
 
