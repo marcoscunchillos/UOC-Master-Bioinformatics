@@ -1,0 +1,8 @@
+   # R / RStudio session files
+   .Rproj.user/
+   .Rhistory
+   .RData
+
+   # Files generated when knitting
+   data/
+   summary_age.doc
