@@ -1,0 +1,66 @@
+---
+title: "Assignment 1.2"
+author: "Marcos Cunchillos Just"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    df_print: paged
+  pdf_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+
+```
+
+## Exercise 1
+
+El	 package	 de R	 datasets	pone	a	nuestra	disposición	una	serie	de	conjuntos	de	datos	con	los	que	poder	trabajar	como, por	ejemplo, iris,	cars o	Titanic.Deberéis:
+• Buscar	un	resumen	estadístico	de	las	variables	del	dataset	Iris y Orange.
+```{r}
+#Sumarize iris
+data(iris)
+head(iris)
+summary(iris)
+#Sumarize Orange
+data(Orange)
+head(Orange)
+summary(Orange)
+```
+• Generar	una	tabla	de	frecuencias	absolutas y relativas.¿Todas	las	tablas	generadas	tienen	sentido	para	vosotros?
+```{r}
+#Frecuencias absolutas variable iris
+kable(table(iris$Sepal.Length))
+kable(table(iris$Sepal.Width))
+kable(table(iris$Petal.Width))
+kable(table(iris$Petal.Length))
+kable(table(iris$Species))
+#frecuencias relativas variables iris
+kable(prop.table(iris$Sepal.Length))
+kable(prop.table(iris$Sepal.Width))
+kable(prop.table(iris$Petal.Length))
+kable(prop.table(iris$Petal.Width))
+prop.table(iris$Species)
+```
+
+• Generar	una	tabla	de	frecuencias	absolutas	con	cada	una	de	las	variables	del	conjunto	
+de	datos	Orange. ¿Todas	las	tablas	generadas	tienen	sentido	para	vosotros?
+```{r}
+#Frecuecias absolutas variables orange
+kable(table(Orange$Tree))
+kable(table(Orange$age))
+kable(table(Orange$circumference))
+```
+• Generar	una	tabla	de	doble	entrada	entre	las	variables	Tree y	Age de	Orange
+```{r}
+table(Orange$Tree,Orange$age)
+```
+

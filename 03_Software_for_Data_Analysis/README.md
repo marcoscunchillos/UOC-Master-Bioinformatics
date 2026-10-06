@@ -24,7 +24,7 @@ This module provides an intermediate-level immersion into the **R statistical co
 
 ---
 
-## 📋 Continuous Assessment Assignments
+## Continuous Assessment Assignments
 
 Each lab folder contains its own `README.md` with the list of deliverables, rendered reports, and setup instructions.
 
@@ -37,7 +37,7 @@ Each lab folder contains its own `README.md` with the list of deliverables, rend
 
 ---
 
-## 🚀 Execution & Reproducibility
+## Execution & Reproducibility
 
 To run the analyses locally, clone the repository and open the corresponding `.Rmd` or `.R` script inside RStudio:
 
