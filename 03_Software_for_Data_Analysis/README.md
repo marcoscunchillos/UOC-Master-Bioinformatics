@@ -9,31 +9,18 @@
 
 </div>
 
-## 🎯 Overview
+## Overview
 This module provides an intermediate-level immersion into the **R statistical computing environment**, RStudio, and reproducible reporting via RMarkdown. Designed for health data science and bioinformatics, the course covers data wrangling, statistical modeling, probability simulations, machine learning fundamentals, and biological package ecosystems like **Bioconductor**.
 
 ---
 
-## 🛠️ Key Technical Skills
+## Key Technical Skills
 
 * **Reproducible Research:** Building dynamic analytical reports using `RMarkdown` and `RStudio`.
 * **Data Wrangling & Visualization:** Manipulating multi-variable datasets and crafting publication-ready plots with `ggplot2`.
 * **Statistical Modeling:** Executing linear regressions, ANOVA, and probability sampling in life-science contexts.
 * **Bioinformatics Ecosystem:** Leveraging `Bioconductor` and specialized biosanitary R libraries.
 * **Machine Learning Introduction:** Implementing supervised, unsupervised, and deep learning workflows in R.
-
----
-
-## 📚 Course Modules & Syllabus
-
-| Unit | Topic | Core Contents |
-| :---: | :--- | :--- |
-| **01** | *Environment & Tooling* | R, RStudio, RCommander, RMarkdown, data import/export, basic data structures. |
-| **02** | *Descriptive Statistics & Graphics* | Recoding variables, frequency tables, `ggplot2` graphics, Linear Regression, and ANOVA. |
-| **03** | *Programming & Databases* | Logic operations, custom functions, data structure manipulation, database connections. |
-| **04** | *Probability & Simulation* | Probability distributions (univariate/multivariate), sampling routines, simulation models. |
-| **05** | *Introduction to Machine Learning* | Supervised/unsupervised algorithms, clustering, and deep learning basics in R. |
-| **06** | *Bioinformatics Packages* | Shiny web applications, **Bioconductor** ecosystem, and health data tools. |
 
 ---
 

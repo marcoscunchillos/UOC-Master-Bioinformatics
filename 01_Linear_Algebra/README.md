@@ -9,12 +9,12 @@
 
 </div>
 
-## 🎯 Overview
+## Overview
 This module provides an introduction to **Linear Algebra for Data Science**, covering systems of linear equations, vector spaces, matrix factorizations, dimensionality reduction, and stochastic dynamic systems. Designed for bioinformatics and health data science, the course demonstrates mathematical foundations applied to real-world computational workflows.
 
 ---
 
-## 🛠️ Key Technical Skills
+## Key Technical Skills
 
 * **Linear Systems & Matrix Algebra:** Solving systems of linear equations and applying matrix operations with `R` and `CalcMe`.
 * **Vector Spaces & Subspaces:** Understanding dimensionality, basis, and projections in high-dimensional biological data.
@@ -25,7 +25,7 @@ This module provides an introduction to **Linear Algebra for Data Science**, cov
 
 ---
 
-## 📋 Continuous Assessment Assignments
+## Continuous Assessment Assignments
 
 | Assignment | Directory | Core Focus & Topics | Status |
 | :---: | :--- | :--- | :---: |
@@ -37,7 +37,7 @@ This module provides an introduction to **Linear Algebra for Data Science**, cov
 
 ---
 
-## 🚀 Execution & Reproducibility
+## Execution & Reproducibility
 
 To run the analyses locally, clone the repository and open the corresponding `.R` or RMarkdown script inside RStudio:
 
