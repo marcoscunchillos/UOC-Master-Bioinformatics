@@ -22,7 +22,6 @@ library(tidyr)
 ```
 
 ## Exercise 1
-
 El	 package	 de R	 datasets	pone	a	nuestra	disposición	una	serie	de	conjuntos	de	datos	con	los	que	poder	trabajar	como, por	ejemplo, iris,	cars o	Titanic.Deberéis:
 • Buscar	un	resumen	estadístico	de	las	variables	del	dataset	Iris y Orange.
 ```{r}
@@ -62,5 +61,132 @@ kable(table(Orange$circumference))
 • Generar	una	tabla	de	doble	entrada	entre	las	variables	Tree y	Age de	Orange
 ```{r}
 table(Orange$Tree,Orange$age)
+```
+
+## Exercise 2
+Copiad y	ejecutad el	código	siguiente	de	los	dos	vectores:
+```{r ex2-enunciado}
+vect1 <- c(1,2,1,2,1,2,1,2,1,2,1,1,1,1,2,2,1,1,2,1)
+vect2 <- c(1,1,2,2,2,1,2,1,1,2,1,2,1,1,1,2,1,1,1,1)
+```
+a) Usando el	vect1 creamos	un	nuevo	vector	llamado	Bajo_peso que	sea	un	factor	con	
+dos niveles.	Las	etiquetas	corresponden	a	1 = Bajo	peso y	2 =	Peso	normal.
+```{r ex2a-etiquetas}
+Bajo_peso<-factor(vect1,levels = c(1,2), labels = c("Bajo peso","Peso normal"))
+```
+b) Usando	el	vect2 creamos	un	nuevo	vector	llamado	Fumador que	sea	un	factor	con	dos
+niveles.	Las	etiquetas	corresponden	a	1 = Fuma y	2 = No	fuma.
+```{r ex2b-fuma}
+Fumador<-factor(vect2,levels = c(1,2),labels = c("Fuma","No fuma"))
+```
+c) Creamos	una	tabla	de	contingencia	con	las	dos	variables	anteriores	con	el	nombre	
+Tabla.
+```{r ex2c-tabla-contingencia}
+Tabla<-table(Bajo_peso,Fumador)
+```
+d) Miramos	la	relación	de	las	variables	anteriores	con	la	prueba del ji cuadrado.
+```{r ex2d-chi-squared}
+chisq.test(Tabla)
+```
+e) Miramos	también	cómo	resulta	el	test	de	Fisher.
+```{r ex2c-fisher}
+fisher.test(Tabla)
+```
+
+##Ejercicio 3:
+a) Activad el	paquete	de	datos	airquality del	paquete	datasets y generad los	siguientes	
+gráficos:
+• Un	gráfico	de	dispersión de	la	variable	Ozone de	color	azul	y	con	almohadillas	(#)	
+en	vez	de	puntos.
+```{r ex3a-plot}
+data("airquality")
+plot(airquality$Ozone, col = "blue", pch = "#")
+```
+• Un	gráfico	de	caja	de	color	rojo	con	la	variable	Temp con	el	título Temperatura	(en	grados	Farenheit).
+```{r ex3a-boxplot}
+boxplot(airquality$Temp,col="red",main="Temperature")
+```
+
+b) Activad el	paquete	de	datos	airmiles del	paquete	datasets y	generad los	siguientes	
+gráficos:
+• Un	gráfico	de	líneas	de	la	serie	de	datos	airmiles	con	el	título	Datos	de	pasajeros	en	vuelos	comerciales	(en	miles)	y	de	color	azul	(cadetblue2)	y	la	etiqueta	del	eje	x	con	Miles	de	pasajeros.
+```{r ex3b-plot-miles}
+data("airmiles")
+plot(airmiles, main = "Datos de pasajeros en vuelos comerciales (miles)",
+ xlab = "Miles de pasajeros", col = "cadetblue2")
+```
+• Un	histograma	de	la	serie	de	datos	airmiles	de	color	marrón	(chocolate2).
+```{r ex3b-histogram}
+hist(airmiles,col="chocolate2")
+```
+c) Representad los	cuatro gráficos	en	una	única	imagen	donde	los	veamos	juntos
+```{r ex3c-juntar-graficos}
+par(mfrow=c(2,2))
+plot(airquality$Ozone, col = "blue", pch = "#")
+boxplot(airquality$Temp,col="red",main="Temperature")
+plot(airmiles, main = "Datos de pasajeros en vuelos comerciales (miles)",
+ xlab = "Miles de pasajeros", col = "cadetblue2")
+hist(airmiles,col="chocolate2")
+```
+##Ejercicio 4:
+Intentad reproducir	el	ejemplo	7 de	este	LAB con	unos	datos	simulados	por	vosotros.	No	
+hace	 falta	 que	 sean	 parecidos, pero	 es	 necesario	 que	 podáis hacer	 diferentes	 gráficos	estadísticos	con	el	comando	plot().
+```{r ex4}
+set.seed(999)
+x1 <- rnorm(1000) #simulamos una variable x1
+y1 <- x1 + rnorm(1000) #simulamos una variable y1
+plot(x1, y1, main="Gráfico de dispersión")
+abline(lm(x1~y1,col="cadetblue2"))
+plot(density(x1), main="Densidad de x1", col="aquamarine") 
+lines(density(y1), col="darkred") 
+```
+
+##Ejercicio 5:
+Para	poder	practicar	la	creación	de	gráficos	con	ggplot2,	 vamos	a	crear	seis gráficos	con	diferentes	 características	 y	 con	 diferentes	 conjuntos	 de	 datos	 de	 paquetes trabajados	anteriormente.
+a) Con	los	datos	airquality del	paquete	datasets	cread un	gráfico	de	dispersión	simple,	pero	con	la	recta	de	regresión	ajustada	en	color	rojo	(darkred).
+```{r ex5a}
+library(ggplot2)
+ggplot(airquality, aes(Solar.R, Temp)) +
+ geom_point(size=3) +
+ geom_smooth(method="lm", col="darkred")
+```
+
+b) Con	los datos	airquality del	paquete	datasets cread un	gráfico	de	dispersión	con	las	
+variables	Solar.R	y	Temp	con	sus	respectivas	etiquetas	de	eje.	Los	colores	y	la	forma	de los	puntos	deben	ser	en	función	de	la	variable	Month	convertida	a	factor.
+```{r ex5b}
+ggplot(airquality, aes(Solar.R,Temp,colour = factor(Month),shape = factor(Month)))+
+  geom_point()+
+  labs(x="Solar radiation",y="Temperature")
+```
+
+c) Con	los	datos	de	Birthwt del	paquete	MASS mostrad la	distribución	de	la	variable	age
+que	tenga	el	borde	de	color	negro	y	azul	en	el	interior	de	las	barras.
+```{r ex5c}
+library(MASS)
+ggplot(birthwt,aes(age))+
+  geom_bar(fill = "steelblue", colour = "black")
+```
+d) Con	los	datos	de	Birthwt del	paquete	MASS mostrad la	distribución	de	la	variable	age,pero	separada	en	dos gráficos	(fumador/no	fumador)	por	la	variable	smoke.
+```{r ex5d}
+birthwt$smoke_f <- factor(birthwt$smoke, levels = c(0,1), labels = c("non smoker","smoker"))
+
+ggplot(birthwt, aes(x = age)) +
+  geom_histogram(fill = "steelblue", colour = "darkblue") +
+  facet_wrap(~ smoke_f) 
+```
+
+##Ejercicio 6:
+Cread un	 gráfico	 con	 unos	 datos	 extraídos	 del	 paquete	 Datasets	 de R	 y	 guardadlo	 como	imagen	(.jpg)	con	el	nombre	migrafic1 y,	también,	como	documento	en	PDF	con	el	nombre	migrafic2.	
+```{r ex6-export-graphs}
+#Export JPG
+jpeg("migradic1.jpg") 
+ggplot(birthwt,aes(age))+
+  geom_bar(fill = "steelblue", colour = "black")
+dev.off 
+#Export PDF
+pdf("migrafic2.pdf") 
+ggplot(birthwt,aes(age))+
+  geom_bar(fill = "steelblue", colour = "black")
+dev.off 
 ```
 
