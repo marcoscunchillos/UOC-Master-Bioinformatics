@@ -55,6 +55,8 @@ kable(prop.table(table(iris$Petal.Width)))
 kable(prop.table(table(iris$Species)))
 ```
 
+Not all of them. The table for `Species` is the only one that is really informative: 50 flowers per species, so a relative frequency of 0.333 each, which just reflects the balanced design of the sampling. The other four variables are continuous measurements, so almost every value appears once or twice and the table is as long as the dataset. A histogram or the `summary()` is the right tool there, not a frequency table.
+
 - Generate a table of absolute frequencies for each of the variables of the **Orange** dataset. Do all the generated tables make sense to you?
 
 ```{r ex1-frequencies-orange}
@@ -64,11 +66,15 @@ kable(table(Orange$age))
 kable(table(Orange$circumference))
 ```
 
+Here it is a bit mixed. `Tree` (5 trees, 7 measurements each) and `age` (7 measurement days, 5 trees each) make sense because they are identifiers of the design, not real measurements. `circumference` is continuous, so its table is mostly counts of 1 and tells us nothing.
+
 - Generate a two-way table between the variables `Tree` and `age` of **Orange**.
 
 ```{r ex1-two-way-table}
 table(Orange$Tree, Orange$age)
 ```
+
+Every cell is 1: each tree was measured once on each of the 7 days, so the design is completely balanced and there are no missing measurements.
 
 ## Exercise 2
 
@@ -112,6 +118,8 @@ chisq.test(contingency_table)
 fisher.test(contingency_table)
 ```
 
+The chi-squared test gives a p-value of 1 and R warns that the approximation may be incorrect. That is expected: with only 20 observations some expected counts are 2.8, below the usual minimum of 5, so the chi-squared result should not be trusted here. Fisher's exact test does not have that limitation and gives p = 1 as well (odds ratio of about 1.2). In both cases we cannot reject independence: in this sample there is no evidence of a relationship between low weight and smoking, although with so few observations the test has very little power.
+
 ## Exercise 3
 
 **a)** Load the **airquality** dataset from the **datasets** package and generate the following plots:
@@ -123,21 +131,21 @@ data("airquality")
 plot(airquality$Ozone, col = "blue", pch = "#")
 ```
 
-- A red boxplot of the variable `Temp`, with the title "Temperature".
+- A red boxplot of the variable `Temp`, with the title "Temperature (in degrees Fahrenheit)".
 
 ```{r ex3a-boxplot-temp}
-boxplot(airquality$Temp, col = "red", main = "Temperature")
+boxplot(airquality$Temp, col = "red", main = "Temperature (in degrees Fahrenheit)")
 ```
 
 **b)** Load the **airmiles** dataset from the **datasets** package and generate the following plots:
 
-- A line plot of the `airmiles` series, titled "Miles)", in blue (`cadetblue2`), with the x-axis label "Passengers".
+- A line plot of the `airmiles` series, titled "Datos de pasajeros de vuelos comerciales (en miles)", in blue (`cadetblue2`), with the x-axis label "Miles de pasajeros".
 
 ```{r ex3b-line-airmiles}
 data("airmiles")
 plot(airmiles,
-     main = "Miles)",
-     xlab = "Passengers",
+     main = "Datos de pasajeros de vuelos comerciales (en miles)",
+     xlab = "Miles de pasajeros",
      col  = "cadetblue2")
 ```
 
@@ -153,10 +161,10 @@ hist(airmiles, col = "chocolate2")
 par(mfrow = c(2, 2))
 
 plot(airquality$Ozone, col = "blue", pch = "#")
-boxplot(airquality$Temp, col = "red", main = "Temperature")
+boxplot(airquality$Temp, col = "red", main = "Temperature (in degrees Fahrenheit)")
 plot(airmiles,
-     main = "Miles",
-     xlab = "Passengers",
+     main = "Datos de pasajeros de vuelos comerciales (en miles)",
+     xlab = "Miles de pasajeros",
      col  = "cadetblue2")
 hist(airmiles, col = "chocolate2")
 
@@ -299,7 +307,7 @@ res <- rstandard(model)
 predicted_values <- fitted(model)
 
 plot(predicted_values, res,
-     xlab = "Valores ajustados", ylab = "Residuos estandarizados")
+     xlab = "Fitted values", ylab = "Standardized residuals")
 ```
 
 ### Step 8: validate the model
@@ -309,6 +317,8 @@ qqnorm(res)
 qqline(res)
 ```
 
+The model explains most of the variability: the correlation between age and circumference is about 0.91 and R-squared is about 0.83, with a clearly significant slope (p < 0.001). On average, a tree gains roughly 0.107 cm of circumference per day. The residuals against the fitted values show a slight funnel shape (the spread grows with the fitted value), so the constant-variance assumption is only approximately met. The Q-Q plot follows the line reasonably well except for a few points in the tails, so normality is acceptable. The model is good enough as a description, but the prediction should be taken as an approximation.
+
 ### Step 9: point prediction
 
 If required, we can obtain a point prediction from our model with `predict()` and the new data.
@@ -317,6 +327,8 @@ If required, we can obtain a point prediction from our model with `predict()` an
 pred_age <- data.frame(age = 600)
 predict(model, pred_age)
 ```
+
+A tree 600 days after planting is expected to have a trunk circumference of about 81.5 cm. 600 days is inside the observed range of ages (118 to 1582 days), so this is an interpolation and not an extrapolation, which makes it more reliable.
 
 ## Exercise 8
 
@@ -379,6 +391,8 @@ Check which groups differ, using a post hoc test such as Tukey's multiple compar
 TukeyHSD(model_anov)
 ```
 
+The ANOVA is significant (F = 4.85, p = 0.016), so at least one group mean differs from the others. The assumptions hold: Shapiro-Wilk is non-significant in the three groups and Bartlett gives p = 0.24. Tukey's test shows that the only significant pair is treatment 2 versus treatment 1 (difference of about 0.87, p = 0.012). Neither treatment differs significantly from the control, since their intervals include 0. So yes, there are differences between treatments, but only between the two treatments themselves: treatment 2 gives the highest dry weight and treatment 1 the lowest.
+
 ## Exercise 9
 
 Using biomedical or health-related data of your choice, imported into R:
@@ -393,12 +407,14 @@ str(heart_data)
 summary(heart_data)
 ```
 
+The dataset has 4,240 participants and 16 variables from the Framingham cohort. The mean age is about 50 years (range 32 to 70) and 43% are men. About half of the participants smoke (mean of 9 cigarettes per day overall), 31% have hypertension and only 3% have diabetes, so the diabetic group is small. The mean total cholesterol is 237 mg/dL, systolic pressure 132 mmHg and BMI 25.8, all slightly above the healthy range on average. Glucose is very right-skewed (median 78, maximum 394) because of the diabetic patients. There are missing values, mostly in `glucose` (388), `education` (105), `BPMeds` (53) and `totChol` (50), which `lm()` and `cor()` handle by dropping those rows. About 15% of participants develop coronary heart disease within 10 years.
+
 - Create two basic plots with the variables, explain their meaning and save them as images (jpeg or bmp).
 
 ```{r ex9-base-plots}
 # Scatter plot: BMI vs heart rate
 plot(heart_data$BMI, heart_data$heartRate,
-     xlab = "IMC",
+     xlab = "BMI",
      ylab = "Heart rate",
      col  = "red")
 
@@ -408,9 +424,11 @@ heart_data$diabetes_f <- factor(heart_data$diabetes,
                                 labels = c("No diabetes", "Diabetes"))
 
 boxplot(glucose ~ diabetes_f, data = heart_data,
-        xlab = "Estado de diabetes", ylab = "Glucosa (mg/dL)",
+        xlab = "Diabetes status", ylab = "Glucose (mg/dL)",
         col = c("lightgreen", "tomato"))
 ```
+
+The scatter plot of BMI against heart rate shows a very diffuse cloud with no clear pattern. The correlation is practically zero (around 0.07), so BMI is not a useful predictor of heart rate here. The boxplot shows that glucose is much higher and much more dispersed in people with diabetes (median around 145 mg/dL) than in people without it (median around 78 mg/dL), as expected from the definition of the disease.
 
 - Create two plots with the `ggplot()` command, explain their meaning and save them as images (jpeg or bmp).
 
@@ -423,7 +441,7 @@ heart_data$currentSmoker_f <- factor(heart_data$currentSmoker,
 ggplot(heart_data, aes(x = totChol)) +
   geom_histogram(fill = "steelblue", colour = "darkblue", binwidth = 10) +
   facet_wrap(~ currentSmoker_f) +
-  labs(x = "Total cholesterol", y = "Frecuencia")
+  labs(x = "Total cholesterol", y = "Count")
 
 # Total cholesterol by smoking status
 ggplot(heart_data, aes(x = currentSmoker_f, y = totChol)) +
@@ -431,6 +449,8 @@ ggplot(heart_data, aes(x = currentSmoker_f, y = totChol)) +
   labs(x = "Smoking habit", y = "Total cholesterol") +
   theme(legend.position = "none")
 ```
+
+The histograms show that total cholesterol has a similar, slightly right-skewed distribution in smokers and non-smokers, with a few extreme values above 400 mg/dL. The boxplot confirms it: the medians are almost identical (about 232 vs 236 mg/dL), so smoking status does not seem to be related to total cholesterol in this sample.
 
 - Fit a linear regression between two of its variables step by step and comment on the results.
 
@@ -452,9 +472,11 @@ res_heart <- rstandard(model_heart)
 predicted_heart <- fitted(model_heart)
 
 plot(predicted_heart, res_heart,
-     xlab = "Valores ajustados", ylab = "Residuos estandarizados")
+     xlab = "Fitted values", ylab = "Standardized residuals")
 
 # Normality of the residuals
 qqnorm(res_heart)
 qqline(res_heart)
 ```
+
+There is a moderate positive correlation between age and systolic blood pressure (r about 0.39). The model estimates about 82 mmHg at age 0 (not meaningful on its own) and an increase of about 1 mmHg per year of age. The slope is highly significant (p < 0.001), but R-squared is only 0.16, so age explains about 16% of the variability in blood pressure and many other factors are missing. In the residuals-versus-fitted plot the variance increases for higher fitted values, and the Q-Q plot departs from the line in the upper tail (right-skewed residuals), so the normality and homoscedasticity assumptions are not fully satisfied. A log transformation of `sysBP` or a multiple model with more predictors (BMI, hypertension, sex) would be the natural next step.
