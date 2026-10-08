@@ -139,13 +139,13 @@ boxplot(airquality$Temp, col = "red", main = "Temperature (in degrees Fahrenheit
 
 **b)** Load the **airmiles** dataset from the **datasets** package and generate the following plots:
 
-- A line plot of the `airmiles` series, titled "Datos de pasajeros de vuelos comerciales (en miles)", in blue (`cadetblue2`), with the x-axis label "Miles de pasajeros".
+- A line plot of the `airmiles` series, titled "Commercial flight passenger data (in thousands)", in blue (`cadetblue2`), with the x-axis label "Thousands of passengers".
 
 ```{r ex3b-line-airmiles}
 data("airmiles")
 plot(airmiles,
-     main = "Datos de pasajeros de vuelos comerciales (en miles)",
-     xlab = "Miles de pasajeros",
+     main = "Commercial flight passenger data (in thousands)",
+     xlab = "Thousands of passengers",
      col  = "cadetblue2")
 ```
 
@@ -163,8 +163,8 @@ par(mfrow = c(2, 2))
 plot(airquality$Ozone, col = "blue", pch = "#")
 boxplot(airquality$Temp, col = "red", main = "Temperature (in degrees Fahrenheit)")
 plot(airmiles,
-     main = "Datos de pasajeros de vuelos comerciales (en miles)",
-     xlab = "Miles de pasajeros",
+     main = "Commercial flight passenger data (in thousands)",
+     xlab = "Thousands of passengers",
      col  = "cadetblue2")
 hist(airmiles, col = "chocolate2")
 
